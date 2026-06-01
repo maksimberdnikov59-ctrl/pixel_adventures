@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Пиксельные приключения — Главная</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Верхняя панель навигации -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">Пиксельные <span class="highlight">приключения</span></span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Главная</a>
+                <a href="#" class="nav-link">Видео</a>
+                <a href="#" class="nav-link">О канале</a>
+            </nav>
+            <div class="auth-links" id="authLinks">
+                <button class="btn btn-outline" id="showLoginBtn">Вход</button>
+                <button class="btn btn-primary" id="showRegisterBtn">Регистрация</button>
+            </div>
+            <div class="user-menu" id="userMenu" style="display: none;">
+                <span class="user-greeting" id="userGreeting"></span>
+                <button class="btn btn-sm btn-outline" id="logoutBtn">Выйти</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный контент -->
+    <main>
+        <!-- Приветственная секция -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Добро пожаловать в <span class="pixel-text">Пиксельные приключения</span>!</h1>
+                    <p class="hero-description">Сообщество для любителей Minecraft, пиксельной графики и настоящих приключений. Присоединяйся к нашей команде и смотри крутой контент на YouTube!</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" id="heroRegisterBtn">Присоединиться</button>
+                        <a href="#" class="btn btn-outline btn-lg">Смотреть видео</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="pixel-block"></div>
+                    <div class="pixel-block small"></div>
+                    <div class="pixel-block medium"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с преимуществами -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Что вас ждёт?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎬</div>
+                        <h3>Эксклюзивные видео</h3>
+                        <p>Ранний доступ к новым выпускам и закулисные материалы.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Игровые события</h3>
+                        <p>Регулярные конкурсы, розыгрыши и совместные стримы.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Закрытый чат</h3>
+                        <p>Общение с автором и другими зрителями без рекламы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция последних видео -->
+        <section class="videos">
+            <div class="container">
+                <h2 class="section-title">Последние видео</h2>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumb"></div>
+                        <h4>Как построить деревню за 10 минут?</h4>
+                        <p>1 234 просмотра</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumb"></div>
+                        <h4>Сражение с Эндер-драконом | ХАРДКОР</h4>
+                        <p>4 567 просмотров</p>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumb"></div>
+                        <h4>ТОП-5 секретных пиксель-артов</h4>
+                        <p>892 просмотра</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Пиксельные приключения. Все права защищены.</p>
+            <p>YouTube канал — <a href="#">подписаться</a></p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно входа -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Вход в аккаунт</h2>
+            <form id="loginForm">
+                <input type="text" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Пароль" required>
+                <button type="submit" class="btn btn-primary full-width">Войти</button>
+            </form>
+            <p>Нет аккаунта? <a href="#" id="switchToRegister">Зарегистрируйтесь</a></p>
+        </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Имя пользователя" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Пароль" required>
+                <button type="submit" class="btn btn-primary full-width">Создать аккаунт</button>
+            </form>
+            <p>Уже есть аккаунт? <a href="#" id="switchToLogin">Войти</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
